@@ -1,1 +1,32 @@
 GET http://localhost:3000/places?text=rua presidente john kennedy, ibes, 30
+
+###
+
+GET http://localhost:3000/places?text=shopping vila velha, vila velha, es
+
+### 
+
+@originId=ChIJgbVRFV89uAARHSpb1e25rJo
+
+@destinationId=ChIJUZzq_Q8WuAARERv2oWlz80k
+
+###
+
+GET http://localhost:3000/directions?originId={{ originId }}&destinationId={{ destinationId }}
+
+###
+
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "source_id": "{{originId}}",
+    "destination_id": "{{destinationId}}",
+    "name": "home -> shopping vila velha"
+}
+
+###
+
+GET http://localhost:3000/routes/675ef577ad9a4009f45d237f
+
+###
